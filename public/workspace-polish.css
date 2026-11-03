@@ -1,0 +1,84 @@
+/* Standalone workspace: one theme owner, readable surfaces, compact clinical review. */
+:root{
+ --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+ --color-surface-sunken:#f4f7fb;--color-surface-base:#fff;--color-surface-elevated:#f8faff;
+ --color-text-primary:#182b45;--color-text-secondary:#344861;--color-text-muted:#54657b;
+ --color-border-subtle:#dbe3ee;--color-border-strong:#acbbd0;
+ --color-accent:#245dc4;--color-accent-hover:#1c4ba2;--color-accent-strong:#245dc4;
+ --color-text-link:#235ab8;--color-text-link-hover:#173e80;--color-hover-bg:#eaf0fa;
+ --button-bg:#245dc4;--button-bg-hover:#1c4ba2;--button-text:#fff;
+ --color-focus-ring:#245dc4;--color-status-warning-subtle:#fff1d9;--color-status-on-warning-subtle:#79500b;
+ --ink:var(--color-text-primary);--muted:var(--color-text-muted);--blue:var(--color-text-link);
+}
+:root[data-color-scheme=dark]{
+ --color-surface-sunken:#101925;--color-surface-base:#172333;--color-surface-elevated:#1d2c40;
+ --color-text-primary:#f0f5fc;--color-text-secondary:#d1dcec;--color-text-muted:#aebed3;
+ --color-border-subtle:#34465d;--color-border-strong:#617992;
+ --color-accent:#91b9ff;--color-accent-hover:#bdd4ff;--color-accent-strong:#3972d6;
+ --color-text-link:#a7c8ff;--color-text-link-hover:#d3e2ff;--color-hover-bg:#283b54;
+ --button-bg:#3972d6;--button-bg-hover:#2b61bd;--button-text:#fff;
+ --color-focus-ring:#a7c8ff;--color-status-warning-subtle:#40331d;--color-status-on-warning-subtle:#f5cd83;
+}
+body.sandbox-page{font-size:15px}
+body.sandbox-page .layout{grid-template-columns:220px minmax(0,1fr)}
+body.sandbox-page main{width:100%;max-width:1380px;margin:0 auto;padding:28px 36px 40px}
+body.sandbox-page aside{padding:26px 20px}
+body.sandbox-page .columns{grid-template-columns:minmax(0,1fr) 235px;gap:24px}
+body.sandbox-page h1{font-size:30px;letter-spacing:-.8px;font-weight:650}
+body.sandbox-page h2{font-size:20px;line-height:1.35;font-weight:600}
+body.sandbox-page h3,body.sandbox-page strong{font-weight:600}
+body.sandbox-page .eyebrow{font-size:11px;letter-spacing:.09em}
+body.sandbox-page .tiny,body.sandbox-page .muted,body.sandbox-page .chart-note,body.sandbox-page .sidebar-note,body.sandbox-page .public-fixture-note{font-size:13px;color:var(--color-text-muted);line-height:1.6}
+body.sandbox-page #notice:empty{display:none}
+body.sandbox-page #notice:not(:empty){margin-bottom:16px}
+body.sandbox-page .public-fixture-note{margin:0 0 16px}
+body.sandbox-page #patient{margin-bottom:20px}
+body.sandbox-page #tabs{margin-bottom:24px;gap:6px}
+body.sandbox-page #tabs button{font-size:14px;min-height:42px;padding:9px 12px}
+body.sandbox-page button{min-height:40px;font-size:14px}
+body.sandbox-page :is(.panel,.focus-hero,.focus-metric,.detail-tile,.review-summary){background:var(--color-surface-base);color:var(--color-text-secondary);border:1px solid var(--color-border-subtle);border-radius:12px;box-shadow:0 2px 5px #10203904}
+body.sandbox-page .focus-hero{padding:18px 20px;margin-bottom:18px;border-left:3px solid var(--color-border-strong)}
+body.sandbox-page .focus-hero h2{font-size:17px;margin:7px 0}
+body.sandbox-page .focus-hero p,body.sandbox-page .focus-outcome{font-size:13px;color:var(--color-text-muted)}
+body.sandbox-page .focus-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:16px}
+body.sandbox-page .focus-metric{padding:18px 20px}
+body.sandbox-page .focus-metric>strong{color:var(--color-text-primary);font-size:34px}
+body.sandbox-page .focus-metric .metric-name{font-size:14px;color:var(--color-text-secondary)}
+body.sandbox-page .focus-metric small,body.sandbox-page .number-unit{font-size:13px;color:var(--color-text-muted)}
+body.sandbox-page .detail-tile{padding:18px 20px;min-height:116px;text-align:left}
+body.sandbox-page .detail-tile strong{font-size:15px}
+body.sandbox-page .detail-tile span{font-size:14px;line-height:1.5;color:var(--color-text-muted)}
+body.sandbox-page .detail-tile small{font-size:13px;color:var(--color-text-link)}
+body.sandbox-page .review-summary{padding:20px;margin-bottom:18px}
+body.sandbox-page .review-summary h2{margin:5px 0 16px}
+body.sandbox-page .review-summary-row{display:grid;grid-template-columns:1fr auto;gap:3px 14px;width:100%;text-align:left;background:transparent;color:var(--color-text-primary);border:0;border-top:1px solid var(--color-border-subtle);border-radius:0;padding:13px 0}
+.review-category{grid-column:1;font-size:12px;color:var(--color-text-muted)}
+.review-summary-row strong{grid-column:1;font-size:14px;line-height:1.45}
+.review-link{grid-column:2;grid-row:1/3;align-self:center;font-size:13px;color:var(--color-text-link)}
+.summary-plot{margin-top:12px}.summary-plot svg{display:block;width:100%;max-height:150px}.summary-plot table,.summary-plot p{display:none}
+body.sandbox-page .story-flag{font-size:12px;color:var(--color-status-on-warning-subtle);background:var(--color-status-warning-subtle)}
+body.sandbox-page .review-column{position:sticky;top:80px;align-self:start}
+body.sandbox-page .appointment{padding:18px 15px}
+body.sandbox-page .appt-time,body.sandbox-page .appt-status{font-size:13px}
+body.sandbox-page .sidebar-note{font-size:12px}
+body.sandbox-page .text-button{color:var(--color-text-link);background:transparent}
+body.sandbox-page :focus-visible{outline:3px solid var(--color-focus-ring);outline-offset:3px}
+@media(min-width:1750px){body.sandbox-page main{padding-top:36px}}
+@media(max-width:1100px){body.sandbox-page .columns{grid-template-columns:1fr}.review-column{position:static!important}body.sandbox-page main{padding:24px}}
+@media(max-width:760px){body.sandbox-page .layout{grid-template-columns:1fr}body.sandbox-page aside{padding:16px 20px}body.sandbox-page aside>h1,body.sandbox-page aside>.muted,body.sandbox-page .sidebar-note{display:none}body.sandbox-page .appointment{margin-top:10px}body.sandbox-page main{padding:20px 16px}body.sandbox-page .detail-grid{grid-template-columns:1fr}body.sandbox-page .review-summary{padding:16px}body.sandbox-page header{padding:0 16px}body.sandbox-page header>a{letter-spacing:0;font-size:13px}body.sandbox-page header nav a{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+.skip-link{position:absolute;left:16px;top:-100px;z-index:1000;background:var(--color-surface-base);color:var(--color-text-primary);padding:12px 18px}.skip-link:focus{top:8px}
+@media(min-width:761px){
+ body.sandbox-page .focus-metric{display:grid;grid-template-columns:minmax(190px,1fr) minmax(220px,1fr);gap:4px 20px;align-items:start}
+ body.sandbox-page .focus-metric>*{grid-column:1;margin-top:0;margin-bottom:0}
+ body.sandbox-page .focus-metric .summary-plot{grid-column:2;grid-row:1/8;align-self:center;width:100%}
+ body.sandbox-page .summary-plot details{display:none}
+ body.sandbox-page aside>h1{font-size:23px;letter-spacing:-.4px}
+}
+
+.summary-plot svg text{display:none}.plot-caption{font-size:13px;line-height:1.5;color:var(--color-text-muted);margin-top:6px}.summary-plot details{display:none}
+body.sandbox-page .unavailable-card{background:var(--color-surface-sunken);border-style:dashed;box-shadow:none;cursor:default}
+body.sandbox-page .unavailable-card strong{color:var(--color-text-secondary)}
+body.sandbox-page .unavailable-card small{color:var(--color-text-muted);font-weight:600}
+body.sandbox-page button:disabled{cursor:not-allowed}
